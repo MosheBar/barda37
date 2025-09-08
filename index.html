@@ -13,23 +13,36 @@
       direction: rtl;
     }
     header {
-      background-image: url("images/hero.jpg");
-      background-position: center center;
-      background-size: contain;
-      background-repeat: no-repeat;
-    
-      min-height: 100dvh; /* Use dynamic viewport height */
+      position: relative;
+      min-height: 100dvh;
       width: 100%;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 0 20px;
-      box-sizing: border-box;
-    
+      overflow: hidden;
+      background-color: #000; /* fallback behind image */
+    }
+    .hero-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;    /* ✅ show entire image */
+      object-position: center;
+      background-color: #000; /* makes bars look less obvious */
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       color: white;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+      padding: 0 20px;
     }
     .section {
       padding: 40px 20px;
